@@ -5,7 +5,7 @@ locals {
     for k1, v1 in var.eventgrid_namespaces : {
       for k2, v2 in coalesce(v1.eventgrid_namespace_topics, {}) :
       "${k1}/${k2}" => merge(v2, {
-        eventgrid_namespace_id = module.eventgrid_namespaces.eventgrid_namespaces["${k1}"].id
+        eventgrid_namespace_id = module.eventgrid_namespaces.eventgrid_namespaces_id["${k1}"]
       })
     }
   ]...)
