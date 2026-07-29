@@ -12,12 +12,12 @@ locals {
 }
 
 module "eventgrid_namespaces" {
-  source               = "git::https://github.com/AeternaModules/azurerm_eventgrid_namespace.git?ref=v4.81.0"
+  source               = "git::https://github.com/AeternaModules/azurerm_eventgrid_namespace.git?ref=v5.0.0"
   eventgrid_namespaces = local.eventgrid_namespaces
 }
 
 module "eventgrid_namespace_topics" {
-  source                     = "git::https://github.com/AeternaModules/azurerm_eventgrid_namespace_topic.git?ref=v4.81.0"
+  source                     = "git::https://github.com/AeternaModules/azurerm_eventgrid_namespace_topic.git?ref=v5.0.0"
   eventgrid_namespace_topics = local.eventgrid_namespace_topics
   depends_on                 = [module.eventgrid_namespaces]
 }
